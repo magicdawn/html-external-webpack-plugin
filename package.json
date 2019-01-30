@@ -4,8 +4,8 @@
   "description": "add external js,css to html-webpack-plugin",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "test-cover": "istanbul cover _mocha -- -u exports",
+    "test": "jest",
+    "test-cover": "jest --coverage",
     "report-cover": "codecov"
   },
   "repository": {
@@ -25,11 +25,9 @@
   },
   "homepage": "https://github.com/magicdawn/html-external-webpack-plugin#readme",
   "devDependencies": {
-    "codecov": "^2.3.0",
-    "eslint": "^4.8.0",
-    "istanbul": "^1.1.0-alpha.1",
-    "mocha": "^3.5.3",
-    "should": "^13.1.0",
+    "codecov": "^3.1.0",
+    "eslint": "^5.12.1",
+    "jest": "^24.0.0",
     "husky": "latest",
     "prettier": "latest",
     "lint-staged": "latest"
