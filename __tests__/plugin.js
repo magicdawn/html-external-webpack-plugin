@@ -1,9 +1,12 @@
 const HtmlExternalWebpackPlugin = require('..')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 describe('HtmlExternalWebpackPlugin', function() {
   let plugin
   beforeEach(() => {
-    plugin = new HtmlExternalWebpackPlugin()
+    plugin = new HtmlExternalWebpackPlugin({
+      HtmlWebpackPlugin,
+    })
   })
 
   it('#getUrlForPackage', async () => {
