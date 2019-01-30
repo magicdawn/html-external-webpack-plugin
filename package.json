@@ -16,7 +16,7 @@
     "webpack",
     "html-webpack-plugin",
     "plugin",
-    "externat"
+    "external"
   ],
   "author": "magicdawn",
   "license": "MIT",
@@ -24,6 +24,10 @@
     "url": "https://github.com/magicdawn/html-external-webpack-plugin/issues"
   },
   "homepage": "https://github.com/magicdawn/html-external-webpack-plugin#readme",
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "lodash": "^4.17.11"
+  },
   "devDependencies": {
     "codecov": "^3.1.0",
     "eslint": "^5.12.1",
@@ -31,6 +35,10 @@
     "husky": "latest",
     "prettier": "latest",
     "lint-staged": "latest"
+  },
+  "peerDependencies": {
+    "html-webpack-plugin": ">=4",
+    "webpack": "*"
   },
   "husky": {
     "hooks": {
