@@ -18,5 +18,14 @@ module.exports = {
         'https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js',
       ],
     }),
+
+    new HtmlExternalWebpackPlugin({
+      HtmlWebpackPlugin,
+      context: __dirname,
+      custom(data) {
+        console.log('Calling custom function')
+        return data
+      },
+    }),
   ],
 }
