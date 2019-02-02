@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlExternalWebpackPlugin = require('../../index.js')
 
 module.exports = {
+  mode: 'development',
   entry: __dirname + '/entry.js',
 
   plugins: [

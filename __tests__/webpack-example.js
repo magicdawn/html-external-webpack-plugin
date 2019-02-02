@@ -1,18 +1,25 @@
 const execa = require('execa')
 const path = require('path')
 const fs = require('fs-extra')
+const webpack = require('webpack')
+const config = require('./webpack/config.js')
 
 describe('webpack example', function() {
   it('it works', async function() {
-    await fs.remove(__dirname + '/webpack/dist')
+    const stats = await new Promise((resolve, reject) => {
+      webpack(config, (err, stats) => {
+        if (err) reject(err)
+        else resolve(stats)
+      })
+    })
 
-    await execa(
-      '../../node_modules/.bin/webpack',
-      `--config config.js`.split(' '),
-      {
-        cwd: __dirname + '/webpack',
-      }
-    )
+    const info = stats.toJson()
+    if (stats.hasErrors()) {
+      console.error(info.errors)
+    }
+    if (stats.hasWarnings()) {
+      console.warn(info.warnings)
+    }
 
     let file = __dirname + '/webpack/dist/index.html'
     file = await fs.readFile(file, 'utf8')
