@@ -3,7 +3,7 @@ const path = require('path')
 const fs = require('fs-extra')
 
 describe('webpack example', function() {
-  it('it works', async function() {
+  it.skip('it works', async function() {
     await fs.remove(__dirname + '/webpack/dist')
 
     await execa(

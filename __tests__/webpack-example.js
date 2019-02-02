@@ -6,13 +6,14 @@ const config = require('./webpack/config.js')
 
 describe('webpack example', function() {
   it('it works', async function() {
+    await fs.remove(__dirname + '/webpack/dist')
+
     const stats = await new Promise((resolve, reject) => {
       webpack(config, (err, stats) => {
         if (err) reject(err)
         else resolve(stats)
       })
     })
-
     const info = stats.toJson()
     if (stats.hasErrors()) {
       console.error(info.errors)
