@@ -33,10 +33,14 @@
   "devDependencies": {
     "codecov": "^3.1.0",
     "eslint": "^5.12.1",
-    "jest": "^24.0.0",
+    "execa": "^1.0.0",
+    "html-webpack-plugin": "^4.0.0-beta.5",
     "husky": "latest",
+    "jest": "^24.0.0",
+    "lint-staged": "latest",
     "prettier": "latest",
-    "lint-staged": "latest"
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
   },
   "husky": {
     "hooks": {
