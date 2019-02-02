@@ -4,6 +4,11 @@ const HtmlExternalWebpackPlugin = require('../../index.js')
 module.exports = {
   mode: 'development',
   entry: __dirname + '/entry.js',
+  context: __dirname,
+  output: {
+    path: __dirname + '/dist',
+    filename: 'index_bundle.js',
+  },
 
   plugins: [
     new HtmlWebpackPlugin({
